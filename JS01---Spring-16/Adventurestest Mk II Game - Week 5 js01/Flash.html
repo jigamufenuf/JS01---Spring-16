@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Helvetica;
+        text-align: center;
+      }
+      #card {
+        width: 500px;
+        padding: 120px 0;
+        margin: 50px auto;
+        border: 5px solid darkseagreen;
+        border-radius: 5px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card"></div>
+    <input type="text" id="answer" autofocus/>
+    <button onclick="checkAnswer();">Answer</button>
+
+    <script>
+      var currentCard = -1;
+      var questions = [
+        "Who am I?",
+        "What is the name of 'Super Mario Bros.'?",
+        "How much wood could a wood chuck chuck if a wood chuck could chuck wood?"
+      ];
+      var answers = [
+        "Alex",
+        "Super Mario Bros.",
+        "Green"
+      ];
+      function checkAnswer() {
+        var correctAnswer = answers[currentCard];
+        var answerInput = document.getElementById("answer");
+        var answer = answerInput.value;
+        if (answer.toLowerCase() == correctAnswer.toLowerCase()) {
+          alert("Yep!")
+        } else {
+          alert("Nope")
+        }
+        showNextCard();
+      }
+      function showNextCard() {
+        if (currentCard < questions.length - 1) {
+          currentCard = currentCard + 1;
+          var cardDiv = document.getElementById("card");
+          cardDiv.textContent = questions[currentCard];
+          var answerInput = document.getElementById("answer");
+          answerInput.value = "";
+        }
+      }
+      showNextCard();
+    </script>
+  </body>
+</html>

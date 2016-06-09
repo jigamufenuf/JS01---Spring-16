@@ -1,0 +1,42 @@
+
+<html>
+  <head>
+    <title>Roguelike</title>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body>
+    <script>
+      function start() {
+        Crafty.init(600, 400);
+        Crafty.background("tan");
+        var columns = 60;
+        var rows = 40;
+        var tileWidth = 10;
+        var tileHeight = 10;
+        var column;
+        var row;
+        for (column = 0; column < columns; column++) {
+          for (row = 0; row < rows; row++) {
+            var tileX = column * tileWidth;
+            var tileY = row * tileHeight;
+            if (Math.random() < 0.1) {
+              var tree = Crafty.e("2D, DOM, Color, Solid");
+              tree.attr({x: tileX, y: tileY, w: tileWidth, h: tileHeight});
+              tree.color("#006400");
+            }
+          }
+        }
+        player = Crafty.e("Player, 2D, DOM, Image, Fourway, Collision");
+        player.attr({x: 10, y: 10, w: 30, h: 30});
+        player.image("tumblr_mg86amhuZu1rrbvmgo9_250")
+        player.fourway();
+        player.onHit("Solid", hit)
+      }
+      function hit(args) {
+        var other = args[0].obj
+        other.destroy();
+      }
+      window.onload = start;      
+    </script>
+  </body>
+</html>

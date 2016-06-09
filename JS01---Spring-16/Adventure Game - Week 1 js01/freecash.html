@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Adventure</title>
+  </head>
+  <body>
+    <script>
+
+    //BEGIN
+      alert("CONGRATULATIONS! YOU ARE OUR WINNER OF OUR RAFFLE!");
+      var choice = prompt("WE WILL ASK YOU 3 QUESTIONS OF HIGHLY VARYING TOPICS. IT CAN BE THE SCIENCES, MOVIES, ANYTHING. TYPE 'yes' TO CONTINUE! TYPE 'no' IF WISH NOT TO!");
+      if (choice == "yes") {
+        alert("SPLENDID! LET US BEGIN!");
+
+      //FIRST QUESTION
+      var choice2 = prompt("YOUR FIRST QUESTION: ON COLUMBUS' VOYAGE TO THE NEW WORLD, WHO FIRST SAW LAND: - 'Columbus' OR 'Crewmate'?");
+
+      //QUESTION 1 CORRECT
+        if (choice2 == "crewmate" || choice2 == "Crewmate" || choice2 == "crew mate") {
+          alert("CORRECT!");
+
+          //SECOND QUESTION
+          var choice3 = prompt("YOUR SECOND QUESTION IS: DONE BY AIRDODGING INTO THE GROUND AT A PRECISE ANGLE, WHAT IS THIS TECHNIQUE FOUND IN SUPER SMASH BROS MELEE THAT ALLOWS FOR CRAZIER MOVEMENT OPTIONS AND MIXUPS: 'L-Cancelling', 'Wavedashing' or 'Z-Targeting'?");
+          //QUESTION 2 CORRECT
+          if (choice3 == "Wavedashing" || choice3 == "wavedashing" || choice3 == "wave dashing") {
+          alert("CORRECT AGAIN!");
+
+          //THIRD QUESTION
+          var choice4 = prompt("YOUR FINAL QUESTION IS: WHAT DOES THE THIRD AMENDMENT OF THE BILL OF RIGHTS ENTAIL: 'a' - THE RIGHT TO OWN GUNS, 'b' - THE RIGHT TO NOT HAVE TO SHELTER SOLDIERS, 'c' - THE RIGHT TO A SPEEDY TRIAL?");
+          //THIRD CORRECT
+          if(choice4 == "b" || choice4 == "B"){
+            alert("CORRECT! CONGRATULATIONS! YOU HAVE PASSED!");
+            prompt("PLEASE ENTER YOUR EMAIL TO RECIEVE YOUR PRIZE!");
+            alert("THANK YOU, AND ENJOY THE THOUSANDS OF SPAM EMAILS YOU WILL NOW RECIEVE THANKS TO YOUR STUPIDITY!");
+          }
+          //THIRD FAIL
+          else{
+            alert("YOU WERE SO CLOSE! GOOD TRY!");
+          }
+        }
+          //QUESTION 2 FAIL
+          else{
+            alert("OH SHUCKS! THAT SEEMS TO BE INCORRECT! SORRY!");
+          }
+        }
+
+        //QUESTION 1 FAIL
+        else {
+          alert("SORRY, BUT THAT IS INCORRECT. BETTER LUCK NEXT TIME!")
+        }
+      }
+
+      //Nope!
+      if (choice == "no") {
+        alert("OH NO! I AM TERRIBLY SORRY TO HEAR THAT.");
+        alert("ACTUALLY, NOT REALLY. IT'S MORE MONEY IN OUR POCKETS.");
+        alert("WELL, ENJOY YOUR DAY THEN.");
+      }
+    </script>
+  </body>
+</html>

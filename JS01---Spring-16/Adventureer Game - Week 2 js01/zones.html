@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Adventure</title>
+  </head>
+  <body>
+    <script>
+    function checkPassword(){
+
+    	var password = prompt("You are currently in what seems to be the attic of a house. You can check the 'window', 'floor', or 'box'");
+        //ATTIC
+    		if(password == "window" || password == "Window"){
+    			alert("You look out the window to see...");
+          alert("Nothing?");
+          alert("You seem to be in some white abyss.")
+          checkPassword();
+    		}
+        if(password == "box" || password == "Box"){
+          alert("You walk over to an open box");
+          alert("You peak inside...");
+          alert("There's a copy of 'Mega Man' in it. Weird.");
+          checkPassword();
+        }
+        if(password == "floor" || password == "Floor"){
+          alert("You search the floor for some sort of exit.");
+          alert("You notice an outline of light in the shape of a square a few inches over.");
+          alert("You kick the square, and you open the door out.");
+          alert("YOU CAN NOW ENTER IN 'leave'");
+          checkPassword();
+          }
+          if(password == "leave" || password == "Leave"){
+          alert("You slide down the exit into a hallway.");
+
+          }
+    		else{
+    			alert("Please type in the possible commands. The only thing that matters is the spelling, and only the first letter may be capitalized.");
+    			checkPassword();
+    		}
+    }
+   
+   checkPassword();
+    </script>
+  </body>
+</html>

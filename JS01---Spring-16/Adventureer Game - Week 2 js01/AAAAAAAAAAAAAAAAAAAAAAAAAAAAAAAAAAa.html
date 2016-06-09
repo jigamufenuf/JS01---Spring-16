@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Adventure</title>
+  </head>
+  <body>
+    <script>
+    function checkPassword(){
+
+    	var password = prompt("Password?");
+
+    		if(password == "swood"){
+    			alert("Correct.");
+    		}
+    		else{
+    			alert("Wrong, dummy.");
+    			checkPassword();
+    		}
+    }
+   
+   checkPassword();
+    </script>
+  </body>
+</html>

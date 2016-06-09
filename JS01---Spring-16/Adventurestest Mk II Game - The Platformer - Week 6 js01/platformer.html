@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Arin's Hellish Nightmare</title>
+    <script src="https://rawgithub.com/craftyjs/Crafty/release/dist/crafty-min.js"></script>
+  </head>
+  <body>
+    <script>
+
+      function hit() {
+        alert("Great Job! You lost. Reload the page to start again!");
+        Craft.stop();
+      }
+
+      function hint() {
+        alert("you win congrats");
+        Craft.stop();
+    }
+		function hnit() {
+        alert("Great Job! You lost. Reload the page to start again.");
+        
+    }
+    	function win() {
+        alert("you win cool");
+        Craft.stop();
+    }
+    
+
+      function start() {
+
+      	function hitTeleport() {
+    	alert("Nice try, hot shot. I don't think so.");
+        player.attr({x: 175, y: 175});
+      }
+
+        Crafty.init();
+        Crafty.background('#FFFFFF url(maxresdefault.jpg) repeat center center');
+        alert("Make it to the end!");
+        var player = Crafty.e("Player, 2D, DOM, Image, Twoway, Gravity, Solid, Collision");
+        player.attr({x: 175, y: 175, w: 50, h: 79});
+        player.image("image.jpg");
+        player.twoway();
+        player.gravity("Floor");
+        Crafty.viewport.follow(player, 0, 0);
+
+        var floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 0, y: 300, w: 1000, h: 10});
+        floor.color("green");
+
+        var floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 1000, y: 600, w: 2000, h: 10});
+        floor.color("green");
+
+        var floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 2900, y: 450, w: 100, h: 10});
+        floor.color("green");
+
+        var floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 2900, y: 300, w: 100, h: 10});
+        floor.color("green");
+
+        var floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 2900, y: 150, w: 100, h: 10});
+        floor.color("green");
+
+        var floor = Crafty.e("Floor, 2D, DOM, Color");
+        floor.attr({x: 2900, y: 0, w: 1000, h: 10});
+        floor.color("green");
+
+        var roof = Crafty.e("Floor, 2D, DOM, Color");
+        roof.attr({x: 0, y: 150, w: 1000, h: 10});
+        roof.color("green");
+
+        var roof2 = Crafty.e("Floor, 2D, DOM, Color");
+        roof2.attr({x: 0, y: 0, w: 1000, h: 10});
+        roof2.color("green");
+
+        var roof3 = Crafty.e("Floor, 2D, DOM, Color");
+        roof3.attr({x: 0, y: -150, w: 1000, h: 10});
+        roof3.color("green");
+
+        var balcony = Crafty.e("Floor, 2D, DOM, Color");
+        balcony.attr({x: 1200, y: -150, w: 900, h: 10});
+        balcony.color("red");
+
+        var roof4 = Crafty.e("Floor, 2D, DOM, Color");
+        roof4.attr({x: 0, y: -300, w: 1000, h: 10});
+        roof4.color("green");
+
+// Floor = 300, Roof = 150, Roof2 = 0, Roof3 = -150, Roof4 = -300
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 300, y: 140, w: 500, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 0, y: -10, w: 250, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 600, y: -10, w: 300, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 700, y: -140, w: 300, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 0, y: -160, w: 300, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 0, y: -300, w: 1000, h: 30});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 2200, y: -210, w: 20, h: 60});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 1930, y: 590, w: 200, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hit);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 1330, y: 590, w: 300, h: 20});
+        obstacle.color("red");
+        obstacle.onHit("Player", hitTeleport);
+
+        var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 3100, y: -200, w: 200, h: 200});
+        obstacle.color("red");
+        obstacle.onHit("Player", hnit);
+
+		var obstacle = Crafty.e("2D, DOM, Color, Solid, Collision");
+        obstacle.attr({x: 3500, y: -40, w: 20, h: 20});
+        obstacle.color("pink");
+        obstacle.onHit("Player", win);        
+       
+
+      }
+      window.onload = start;      
+    </script>
+  </body>
+</html>

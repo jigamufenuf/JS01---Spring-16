@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <script>
+var humanDoesAThing = prompt("Do you choose rock, paper or scissors?");
+var computerDoesOneToo = Math.random();
+if (computerDoesOneToo < 0.34) {
+    computerDoesOneToo = "rock";
+} else if(computerDoesOneToo <= 0.67) {
+    computerDoesOneToo = "paper";
+} else {
+    computerDoesOneToo = "scissors";
+}
+
+var compare = function(choiceUno, choiceDos) {
+    if(chioceUno === choiceDos) {
+    alert("Congrats you both lose");
+}
+if(chioceUno === "rock") {
+    if(choiceDos === "scissors") {
+        alert("rock wins");
+    } else {
+        alert("paper wins");
+    }
+}
+}
+if(chioceUno === "paper") {
+    if(choiceDos === "rock") {
+        alert("paper wins");
+    } else {
+        if(choiceDos === "scissors") {
+            alert("scissors wins");
+    }
+}
+if(chioceUno === "scissors") {
+    if(choiceDos === "rock") {
+        alert("rock wins");
+    } else {
+        if(choiceDos === "paper") {
+            alert("scissors wins");
+        }
+    }
+}
+};
+alert("You chose: " + humanDoesAThing);
+alert("The computer chose: " + computerDoesOneToo);
+compare(humanDoesAThing, computerDoesOneToo);
+</script>
+</body>
+</html>
